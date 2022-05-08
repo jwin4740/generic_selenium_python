@@ -1,6 +1,5 @@
 from selenium import webdriver
 import selenium
-import os
 
 
 class GenericSelenium:
@@ -36,7 +35,9 @@ class GenericSelenium:
         return self.driver
 
     def login_by_id(self, username, password, username_element, password_element):
-        u_element = self.driver.find_element_by_id(username_element)
-        p_element = self.driver.find_element_by_id(password_element)
+        u_element = self.driver.find_element(username_element)
+        p_element = self.driver.find_element(password_element)
         u_element.send_keys(username)
         p_element.send_keys(password)
+
+
